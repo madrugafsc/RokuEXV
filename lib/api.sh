@@ -139,7 +139,7 @@ if [[ "$texto_user" == "0" ]]; then
     sleep 0.3
     clear
     sleep 0.5
-    break
+    main_menu
 fi
 
 sleep 0.5
@@ -227,7 +227,7 @@ free_navigation() {
     sleep 0.3
     clear
     sleep 0.5
-    break
+    main_menu
   fi
   read -r -n 1 -p "$(echo -e "${AMARELO}>  ${VERDE}")" direction
 
