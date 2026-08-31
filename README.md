@@ -43,13 +43,13 @@ To install the tool, clone the repository and grant execution permissions to the
 
 ```bash
 # Clone the repository
-git clone https://github.com/MadrugaYH/RokuEXV
+git clone https://github.com/madrugafsc/rokuexv
 
 # Navigate to the project directory
-cd RokuEXV
+cd rokuexv
 
 # Grant execution permissions
-chmod +x main.sh
+chmod +x rokuexv.sh
 ```
 
 ## Usage
