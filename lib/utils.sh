@@ -1,21 +1,5 @@
 #!/bin/bash
 
-# validating ip
-validating() {
-    if [[ ! "$Ip" =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
-     echo -e "${VERMELHO}Error: Invalid IP address!${RESET}"
-        exit 1
-    else
-        IFS='.' read -ra octets <<< "$Ip"
-     for o in "${octets[@]}"; do
-            if (( o > 255 )); then
-                echo -e "${VERMELHO}Error: Invalid IP address!${RESET}"
-                exit 1
-            fi
-    done
-    fi
-}
-
 # menu 
 option1() {
     while true; do 
@@ -76,15 +60,17 @@ select option in "${options[@]}"; do
             echo -e "${RESET}"
             REPLY=""
             ;;
-        "Free navigation")
+        "Free search")
         sleep 0.3
-            echo "You choose the option 3! "
+            teclado_func
             REPLY=""
             ;;
         "Exit")
+        sleep 0.2
+        echo "                                 "
         sleep 0.7
         echo -e "${VERMELHO}Exiting...${RESET}"
-        sleep 2
+        sleep 3
             exit 0
             ;;
         *)
@@ -98,20 +84,6 @@ select option in "${options[@]}"; do
     esac
 done
 done
-}
-
-menu_salvador() {
-    sleep 0.5
-        clear
-        sleep 1
-        echo -e "${AMARELO}1) Functions of system${RESET}"
-        sleep 0.25
-        echo -e "${AMARELO}2) Apps${RESET}"
-        sleep 0.25
-        echo -e "${AMARELO}3) Free keyboard${RESET}"
-        sleep 0.25
-        echo -e "${AMARELO}4) Exit${RESET}"
-        sleep 0.5
 }
 
 menu_apps() {
@@ -144,10 +116,25 @@ menu_apps() {
             exitapps_func
             REPLY="" ;;
             "Return to menu")
-            menu_salvador
+            sleep 0.5
+            clear
+            sleep 1
             break ;;
             *) 
             continue ;;
         esac
     done
+}
+
+validar_arg() {    
+    if [ -z "$Ip" ]; then
+    sleep 1.5
+    echo "                                                        "
+        echo -e "${AMARELO}Error: missing an IP Address ${RESET}"
+        echo "                                                        "
+        sleep 1
+        echo -e "${AMARELO}Usage: $0 <IP_ADDRESS>${RESET}"
+        sleep 1.5
+        exit 1
+    fi
 }
