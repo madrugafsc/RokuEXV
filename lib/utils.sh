@@ -65,6 +65,9 @@ select option in "${options[@]}"; do
             teclado_func
             REPLY=""
             ;;
+        "Free navigation")
+        free_navigation
+        ;;
         "Exit")
         sleep 0.2
         echo "                                 "
