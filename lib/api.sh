@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#Function Sound Up
 volumeup() {
   sleep 0.2
   clear 
