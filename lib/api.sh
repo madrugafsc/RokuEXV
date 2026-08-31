@@ -138,7 +138,7 @@ read -rp "$(echo -e "${AMARELO}>  ${VERDE}")" texto_user
 if [[ "$texto_user" == "0" ]]; then
     sleep 0.3
     clear
-    sleep 0.5
+    sleep 0.3
     main_menu
 fi
 
@@ -146,15 +146,15 @@ sleep 0.5
 echo "                                                               "
 sleep 1
 echo -e "${AMARELO}In which app do you want to search for this? ${RESET}"
-sleep 0.3
+sleep 0.1
 echo -e "${AMARELO}1) Netflix ${RESET}"
-sleep 0.3
+sleep 0.1
 echo -e "${AMARELO}2) Spotify ${RESET}"
-sleep 0.3
+sleep 0.1
 echo -e "${AMARELO}3) Youtube ${RESET}"
-sleep 0.3
+sleep 0.1
 echo -e "${AMARELO}4) Browse of system ${RESET}"
-sleep 0.3
+sleep 0.1
 echo "                                                               "
 sleep 0.3
 read -rp "$(echo -e "${AMARELO}>  ${VERDE}")" app_choice  
@@ -217,16 +217,22 @@ free_navigation() {
   clear
   sleep 0.5
   echo -e "${AMARELO}For use this, just press A to go left, D to go right, W to go up, S to go down ${RESET}"
+  sleep 0.1
   echo -e "${AMARELO}press 1 to select ur action, 2 to go back or 0 to exit to main menu ${RESET}"
+  sleep 0.1
   echo -e "${VERDE}  W ${RESET}"
+  sleep 0.1
   echo -e "${VERDE}A S D${RESET}"
+  sleep 0.1
   echo -e "${VERDE}1 = OK ${RESET}" 
+  sleep 0.1
   echo -e "${VERDE}2 = Back ${RESET}"
+  sleep 0.1
   echo -e "${VERDE}0 = Exit to main menu ${RESET}"
   if [[ "$direction" == "0" ]]; then
     sleep 0.3
     clear
-    sleep 0.5
+    sleep 0.3
     main_menu
   fi
   read -r -n 1 -p "$(echo -e "${AMARELO}>  ${VERDE}")" direction
@@ -324,7 +330,7 @@ free_navigation() {
     continue;;
     [0]) sleep 0.3
     clear
-    sleep 0.5
+    sleep 0.3
     main_menu ;;
     *) sleep 0.3
     echo "          "
