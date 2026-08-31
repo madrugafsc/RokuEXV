@@ -55,10 +55,10 @@ Ensure your computer and the Roku TV are connected to the same local network. Pa
 
 ```bash
 # General usage example (adjust according to your script's actual syntax)
-./main.sh 192.168.1.50
+./rokuexv.sh <ip address>
 ```
 
-*Note: Replace `192.168.1.50` with your Roku TV's actual local IP address.*
+*Note: Replace `<ip address>` with your Roku TV's actual local IP address.*
 
 ## License
 This project is licensed under the **GPL 2.0 (GNU General Public License v2.0)**. See the `LICENSE` file for more details.
