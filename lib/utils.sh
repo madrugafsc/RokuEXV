@@ -34,7 +34,7 @@ option1() {
         5) mutartv_func;;
         6) sleep 0.5
         clear
-        sleep 1
+        sleep 0.5
         main_menu ;;  
         *) echo -e "${VERMELHO}Error: Option invalid! ${RESET}" ;;
       esac
@@ -48,29 +48,29 @@ main_menu() {
     clear
     sleep 0.5
     echo -e "${VERMELHO}⠀⠀⠀⠀⠀⠀⠀⢠⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡄⠀        (                             )          ${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${VERMELHO}⠀⠀⠀    ⠀⠀⠉⠻⣦⣄⠀⠀⠀⠀⠀⠀⣠⣴⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀ )\\ )         )             ( /(          ${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${VERMELHO}⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠉⣠⣴⣶⣶⣦⣄⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ((()/(      ( /(    (   (    )\()) (   (   ${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${VERMELHO}⠀⠀⠀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣉⣉⣉⣉⣉⣉⣀⣀⣀⣀⣀⣀⣀⣀⣀⠀⠀⠀ /(_)) (   )\\())  ))\\  )\\  ((_)\\  )\\  )\\  ${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${VERMELHO}⠀⠀⢸⣿⠟⠛⣛⣛⣛⣛⣛⣛⣛⣛⣛⣛⣛⣛⠛⠛⠛⠛⢿⡿⠛⠿⣿⡇⠀⠀ (_))   )\\ ((_)\\  /((_)((_) __((_)((_)((_) ${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${VERMELHO}  ⢸⡏⢠⣾⣿⣿⣿⣿⣿⠿⠛⠋⠉⠁⠀⠀⠀⠀⠀⠀⢸⣇⠀⠀⣽⡇⠀⠀| _ \\ ((_)| |(_)(_))(| __|\\ \\/ /\\ \\ / /  ${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${VERMELHO}⠀⠀⢸⡇⢸⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⡇⠀⠀|   //_ \\| / / | ||| | _|  >  <  \\ V /   ${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${VERMELHO}⠀⠀⢸⡇⢸⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⡇⠀⠀|_|_\\\\___/|_\\_\\ \\_,_| |___|/_/\\_\\  \\_/    ${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${VERMELHO}⠀⠀⢸⡇⢸⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⡇ ${RESET}  ${AMARELO}[${VERDE}Coded by Madruga${RESET}${RESET}${AMARELO}]${RESET}"    
-    sleep 0.2
+    sleep 0.1
     echo -e "${LARANJA}  ⢸⡇⠸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡷⠶⠶⣾⡇⠀⠀${RESET} ${AMARELO}[${VERDE}Github: madrugafsc${RESET}${AMARELO}]${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${LARANJA}⠀ ⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡷⠶⠶⢾⡇⠀⠀${RESET} ${AMARELO}[${VERDE}Discord: little_madruga${RESET}${AMARELO}]${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${LARANJA} ⠀⢸⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣷⣶⣶⣿⡇⠀⠀${RESET} ${AMARELO}[${VERDE}Email: madrugayh@keemail.me${RESET}${AMARELO}]${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${LARANJA}  ⠘⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠃${RESET}"
     echo ""
 
@@ -152,7 +152,7 @@ menu_apps() {
             "Return to menu")
             sleep 0.5
             clear
-            sleep 1
+            sleep 0.5
             main_menu ;;
             *) 
             continue ;;
