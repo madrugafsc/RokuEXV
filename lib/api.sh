@@ -34,6 +34,7 @@ fi
 done
 }
 
+#Function Sound Down
 volumedown() {
   sleep 0.2
   clear 
@@ -120,6 +121,8 @@ mutartv_func() {
   fi
 }
 
+
+# função para escrever
 teclado_func() {
   while true; do
 sleep 0.5
@@ -130,6 +133,14 @@ sleep 0.5
 echo "                                                               "
 sleep 0.5
 read -rp "$(echo -e "${AMARELO}>  ${VERDE}")" texto_user
+
+if [[ "$texto_user" == "0" ]]; then
+    sleep 0.3
+    clear
+    sleep 0.5
+    break
+fi
+
 sleep 0.5
 echo "                                                               "
 sleep 1
@@ -147,12 +158,6 @@ echo "                                                               "
 sleep 0.3
 read -rp "$(echo -e "${AMARELO}>  ${VERDE}")" app_choice  
 
-if [[ "$texto_user" == "0" ]]; then
-    sleep 0.3
-    clear
-    sleep 0.5
-    main_menu
-fi
 
 if [[ "$app_choice" == "1" ]]; then
     curl -d '' "http://${Ip}:8060/launch/12?contentId=search" > /dev/null 2&1
@@ -174,11 +179,14 @@ else
     continue
 fi
 
+# Loop para ler a variável caractere por caractere
 for (( i=0; i<${#texto_user}; i++ )); do
     CARACTERE="${texto_user:$i:1}"
     
+    # Codifica o caractere para o formato URL (ex: espaço vira %20)
     CHAR_CODIFICADO=$(echo -n "$CARACTERE" | xxd -plain | tr -d '\n' | sed 's/\(..\)/%\1/g')
     
+    # Envia o comando para a Roku TV
     if curl --connect-timeout 3 --max-time 4 -d '' "http://${Ip}:8060/keypress/Lit_${CHAR_CODIFICADO}" > /dev/null 2>&1; then
 
     sleep 0.2
@@ -201,6 +209,128 @@ done
 done
 }
 
-}
+free_navigation() {
+  local direction=""
+  while true; do
+  sleep 0.5
+  clear
+  sleep 0.5
+  echo -e "${AMARELO}For use this, just press A to go left, D to go right, W to go up, S to go down ${RESET}"
+  echo -e "${AMARELO}press 1 to select ur action, 2 to go back or 0 to exit to main menu ${RESET}"
+  echo -e "${VERDE}  W ${RESET}"
+  echo -e "${VERDE}A S D${RESET}"
+  echo -e "${VERDE}1 = OK ${RESET}" 
+  echo -e "${VERDE}2 = Back ${RESET}"
+  echo -e "${VERDE}0 = Exit to main menu ${RESET}"
+  if [[ "$direction" == "0" ]]; then
+    sleep 0.3
+    clear
+    sleep 0.5
+    break
+  fi
+  read -r -n 1 -p "$(echo -e "${AMARELO}>  ${VERDE}")" direction
 
+  case $direction in
+    [Ww]) if curl --connect-timeout 3 --max-time 4 -d '' "http://${Ip}:8060/keypress/Up" > /dev/null 2>&1; then
+    true
+    else
+    sleep 0.3
+    echo "          "
+    sleep 0.5
+    echo -e "${VERMELHO}Error: communication with device failed ${RESET}"
+    sleep 0.2
+    echo "          "
+    sleep 0.5
+    echo -e "${VERMELHO}Exiting... ${RESET}"
+    sleep 3
+    exit 1
+      fi
+    continue;;
+    [Ss]) if curl --connect-timeout 3 --max-time 4 -d '' "http://${Ip}:8060/keypress/Down" > /dev/null 2>&1; then
+     true
+     else
+    sleep 0.3
+    echo "          "
+    sleep 0.5
+    echo -e "${VERMELHO}Error: communication with device failed ${RESET}"
+    sleep 0.2
+    echo "          "
+    sleep 0.5
+    echo -e "${VERMELHO}Exiting... ${RESET}"
+    sleep 3
+    exit 1
+    fi
+    continue;;
+    [Aa]) if curl --connect-timeout 3 --max-time 4 -d '' "http://${Ip}:8060/keypress/Left" > /dev/null 2>&1; then
+     true
+     else
+    sleep 0.3
+    echo "          "
+    sleep 0.5
+    echo -e "${VERMELHO}Error: communication with device failed ${RESET}"
+    sleep 0.2
+    echo "          "
+    sleep 0.5
+    echo -e "${VERMELHO}Exiting... ${RESET}"
+    sleep 3
+    exit 1
+    fi
+    continue;;
+    [Dd]) if curl --connect-timeout 3 --max-time 4 -d '' "http://${Ip}:8060/keypress/Right" > /dev/null 2>&1; then
+     true
+     else
+    sleep 0.3
+    echo "          "
+    sleep 0.5
+    echo -e "${VERMELHO}Error: communication with device failed ${RESET}"
+    sleep 0.2
+    echo "          "
+    sleep 0.5
+    echo -e "${VERMELHO}Exiting... ${RESET}"
+    sleep 3
+    exit 1
+    fi
+    continue;;
+    ["1"]) if curl -d '' "http://${Ip}:8060/keypress/Select" > /dev/null 2>&1; then
+     true
+     else
+    sleep 0.3
+    echo "          "
+    sleep 0.5
+    echo -e "${VERMELHO}Error: communication with device failed ${RESET}"
+    sleep 0.2
+    echo "          "
+    sleep 0.5
+    echo -e "${VERMELHO}Exiting... ${RESET}"
+    sleep 3
+    exit 1
+    fi
+    continue;;
+    ["2"]) if curl -d '' "http://${Ip}:8060/keypress/Back" > /dev/null 2>&1; then
+     true
+     else
+    sleep 0.3
+    echo "          "
+    sleep 0.5
+    echo -e "${VERMELHO}Error: communication with device failed ${RESET}"
+    sleep 0.2
+    echo "          "
+    sleep 0.5
+    echo -e "${VERMELHO}Exiting... ${RESET}"
+    sleep 3
+    exit 1
+    fi
+    continue;;
+    [0]) sleep 0.3
+    clear
+    sleep 0.5
+    main_menu ;;
+    *) sleep 0.3
+    echo "          "
+    sleep 0.5
+    echo -e "${VERMELHO}Error: Invalid option!${RESET}" 
+    continue;;
+  esac
+  done
+}
 
