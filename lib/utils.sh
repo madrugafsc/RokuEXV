@@ -7,23 +7,23 @@ option1() {
     clear
     sleep 0.5
     echo -e "${AMARELO}«========================»${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${AMARELO}  1) Power ON             ${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${AMARELO}  2) Power OFF            ${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${AMARELO}  3) Sound UP             ${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${AMARELO}  4) Sound DOWN           ${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${AMARELO}  5) Sound MUTE           ${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${AMARELO}  6) Back to menu         ${RESET}"
-    sleep 0.2
+    sleep 0.1
     echo -e "${AMARELO}«========================»${RESET}"
     sleep 0.1
     echo "                          "
-    sleep 0.7
+    sleep 0.4
     read -rp "$(echo -e "${AMARELO}Select one option: ${VERDE}")" system_choice
     
       case $system_choice in
@@ -34,7 +34,7 @@ option1() {
         5) mutartv_func;;
         6) sleep 0.5
         clear
-        sleep 0.5
+        sleep 0.3
         main_menu ;;  
         *) echo -e "${VERMELHO}Error: Option invalid! ${RESET}" ;;
       esac
@@ -44,7 +44,7 @@ option1() {
 #Menu de opções
 main_menu() {
 
-        sleep 0.5
+        sleep 0.3
     clear
     sleep 0.5
     echo -e "${VERMELHO}⠀⠀⠀⠀⠀⠀⠀⢠⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡄⠀        (                             )          ${RESET}"
@@ -77,7 +77,7 @@ main_menu() {
     PS3=$(echo -e "${AMARELO}Choose an option: ${VERDE}")
     echo -e "${RESET}"
 while true; do
-sleep 1
+sleep 0.3
 select option in "${options[@]}"; do
     case $option in
         "Functions of system")
@@ -124,7 +124,7 @@ menu_apps() {
     local PS3=$(echo -e "${AMARELO}Choose an option: ${VERDE}")
     sleep 0.5
     clear
-    sleep 1
+    sleep 0.5
     echo -e "${RESET}"
     select option in "${app_options[@]}"; do
         case $option in
@@ -152,7 +152,7 @@ menu_apps() {
             "Return to menu")
             sleep 0.5
             clear
-            sleep 0.5
+            sleep 0.3
             main_menu ;;
             *) 
             continue ;;
