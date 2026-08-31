@@ -1,38 +1,27 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# Nome do Script: RokuEXV.sh
-# Descrição:      An Roku TV Exploit
-# Autor:          MadrugaYH
+# Name of Script: RokuEXV
+# Description:  An Roku TV Exploit
+# Author: MadrugaYH
 # ==============================================================================
 
 # ------------------------------------------------------------------------------
-# 1. SEGURANÇA E AMBIENTE
+# 1. SECURITY AND SOURCES
 # ------------------------------------------------------------------------------
 
 set -euo pipefail
 
-# 1. Define a raiz do projeto
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE}")" &> /dev/null && pwd)"
 
-# 2. Carrega as Variáveis Sensíveis (se o arquivo .env existir)
-if [ -f "$ROOT_DIR/.env" ]; then
-    source "$ROOT_DIR/.env"
-else
-    echo "Erro: Arquivo .env não encontrado. Crie um com base no .env.example" >&2
-    exit 1
-fi
+source "$ROOT_DIR/config/variables.conf"
+source "$ROOT_DIR/config/colors.conf"
 
-# 3. Carrega as Configurações Globais e Mensagens
-source "$ROOT_DIR/config/variaveis.conf"
-source "$ROOT_DIR/config/cores.conf"
-
-
-# 4. Carrega as Funções da pasta lib/
 for arquivo_lib in "$ROOT_DIR"/lib/*.sh; do
     [ -f "$arquivo_lib" ] && source "$arquivo_lib"
 done
 
-# --- Início do Fluxo do Script ---
+validar_arg
+
 main() {
     sleep 0.5
     clear
