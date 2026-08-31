@@ -12,7 +12,7 @@ The protocol was originally designed to allow official mobile apps, voice assist
 ## What is the tool?
 **RokuEXV** is a command-line automation and remote control tool developed to interact directly with the ECP API of Roku TV devices connected to the same local network.
 
-![image of menu](image.png)
+![image of menu](image(1).png)
 
 ## What is it used for?
 The tool allows you to manage and manipulate the TV system without a physical remote control. With it, you can:
