@@ -7,13 +7,13 @@ netflix_func() {
    sleep 0.5
    clear
    sleep 1.2
-   echo -e "${VERMELHO}Error: comunication with device failed ${RESET}"
+   echo -e "${VERMELHO}Error: communication with device failed ${RESET}"
    sleep 0.2
    echo "                                                            "
    sleep 0.5
    echo -e "${VERMELHO}Exiting... ${RESET}"
    sleep 3
-   exit 1
+   return 1
   fi
 }
 
@@ -24,13 +24,13 @@ spotify_func() {
    sleep 0.5
    clear
    sleep 1.2
-   echo -e "${VERMELHO}Error: comunication with device failed ${RESET}"
+   echo -e "${VERMELHO}Error: communication with device failed ${RESET}"
    sleep 0.2
    echo "                                                            "
    sleep 0.5
    echo -e "${VERMELHO}Exiting... ${RESET}"
    sleep 3
-   exit 1
+   return 1
   fi
 }
 
@@ -41,13 +41,13 @@ youtube_func() {
    sleep 0.5
    clear
    sleep 1.2
-   echo -e "${VERMELHO}Error: comunication with device failed ${RESET}"
+   echo -e "${VERMELHO}Error: communication with device failed ${RESET}"
    sleep 0.2
    echo "                                                            "
    sleep 0.5
    echo -e "${VERMELHO}Exiting... ${RESET}"
    sleep 3
-   exit 1
+   return 1
   fi
 }
 
@@ -58,13 +58,13 @@ primevideo_func() {
    sleep 0.5
    clear
    sleep 1.2
-   echo -e "${VERMELHO}Error: comunication with device failed ${RESET}"
+   echo -e "${VERMELHO}Error: communication with device failed ${RESET}"
    sleep 0.2
    echo "                                                            "
    sleep 0.5
    echo -e "${VERMELHO}Exiting... ${RESET}"
    sleep 3
-   exit 1
+   return 1
   fi
 }
 
@@ -75,13 +75,13 @@ disney_func() {
    sleep 0.5
    clear
    sleep 1.2
-   echo -e "${VERMELHO}Error: comunication with device failed ${RESET}"
+   echo -e "${VERMELHO}Error: communication with device failed ${RESET}"
    sleep 0.2
    echo "                                                            "
    sleep 0.5
    echo -e "${VERMELHO}Exiting... ${RESET}"
    sleep 3
-   exit 1
+   return 1
   fi
 }
 
@@ -92,13 +92,13 @@ exitapps_func() {
    sleep 0.5
    clear
    sleep 1.2
-   echo -e "${VERMELHO}Error: comunication with device failed ${RESET}"
+   echo -e "${VERMELHO}Error: communication with device failed ${RESET}"
    sleep 0.2
    echo "                                                            "
    sleep 0.5
    echo -e "${VERMELHO}Exiting... ${RESET}"
    sleep 3
-   exit 1
+   return 1
   fi
 }
 
@@ -109,12 +109,12 @@ pluto_func() {
    sleep 0.5
    clear
    sleep 1.2
-   echo -e "${VERMELHO}Error: comunication with device failed ${RESET}"
+   echo -e "${VERMELHO}Error: communication with device failed ${RESET}"
    sleep 0.2
    echo "                                                            "
    sleep 0.5
    echo -e "${VERMELHO}Exiting... ${RESET}"
    sleep 3
-   exit 1
+   return 1
   fi
 }
