@@ -225,7 +225,7 @@ teclado_func() {
         "http://${Ip}:8060/keypress/Lit_${CHAR_CODIFICADO}" \
         > /dev/null 2>&1
       then
-        echo -e "${AMARELO}Researching... ${RESET}"
+        echo -e "${LARANJA}Researching: ${VERDE}${CARACTERE}${RESET} ${RESET}"
 
         sleep 0.2
 
@@ -309,23 +309,23 @@ free_navigation() {
 
     sleep 0.1
 
-    echo -e "${VERDE}  W${RESET}"
+    echo -e "${LARANJA}  W${RESET}"
 
     sleep 0.1
 
-    echo -e "${VERDE}A S D${RESET}"
+    echo -e "${LARANJA}A S D${RESET}"
 
     sleep 0.1
 
-    echo -e "${VERDE}1 = OK${RESET}"
+    echo -e "${LARANJA}1 = OK${RESET}"
 
     sleep 0.1
 
-    echo -e "${VERDE}2 = Back${RESET}"
+    echo -e "${LARANJA}2 = Back${RESET}"
 
     sleep 0.1
 
-    echo -e "${VERDE}0 = Exit to main menu${RESET}"
+    echo -e "${LARANJA}0 = Exit to main menu${RESET}"
 
     sleep 0.2
 
