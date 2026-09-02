@@ -19,7 +19,7 @@ volumeup() {
 local i=0
 while [ $i -le $Loop ]; do
 sleep 0.1
-if curl --connect-timeout 3 --time-max 4 -d '' "http://${Ip}:8060/keypress/VolumeUp" > /dev/null 2>&1; then
+if curl -d '' "http://${Ip}:8060/keypress/VolumeUp" > /dev/null 2>&1; then
   echo -e "${VERDE}Successful Volume is UP! $i${RESET}"
   else
   sleep 1
@@ -55,7 +55,7 @@ volumedown() {
     local i=0
   while [ $i -le $Loop ]; do
     sleep 0.1
-    if curl --connect-timeout 3 --max-time 4 -d '' "http://${Ip}:8060/keypress/VolumeUp" > /dev/null 2>&1; then
+    if curl -d '' "http://${Ip}:8060/keypress/VolumeUp" > /dev/null 2>&1; then
       echo -e "${VERDE}Sucessful Volume is DOWN! $i${RESET}"
     else
     sleep 1
@@ -72,7 +72,7 @@ volumedown() {
 }
 
 desligartv_func() {
-  if curl --connect-timeout 3 --max-time 4 '' -d "http://${Ip}:8060/keypress/PowerOFF" > /dev/null 2>&1; then
+  if curl -d ''  "http://${Ip}:8060/keypress/PowerOFF" > /dev/null 2>&1; then
    echo -e "${VERDE}Successful Power OFF!${RESET}"
   else
    sleep 0.5
@@ -89,7 +89,7 @@ desligartv_func() {
 }
 
 ligartv_func() {
-  if curl --connect-timeout 3 --max-time 4 '' -d "http://${Ip}:8060/keypress/PowerOn" > /dev/null 2>&1; then
+  if curl -d ''  "http://${Ip}:8060/keypress/PowerOn" > /dev/null 2>&1; then
    echo -e "${VERDE}Successful Power ON!${RESET}"
   else
    sleep 0.5
@@ -106,7 +106,7 @@ ligartv_func() {
 }
 
 mutartv_func() {
-  if curl --connect-timeout 3 --max-time 4 '' -d "http://${Ip}:8060/keypress/VolumeMute" > /dev/null 2>&1; then
+  if curl -d '' "http://${Ip}:8060/keypress/VolumeMute" > /dev/null 2>&1; then
    echo -e "${VERDE}Successful Device MUTED!${RESET}"
   else
    sleep 0.5
@@ -188,10 +188,10 @@ for (( i=0; i<${#texto_user}; i++ )); do
     CHAR_CODIFICADO=$(echo -n "$CARACTERE" | xxd -plain | tr -d '\n' | sed 's/\(..\)/%\1/g')
     
     # Envia o comando para a Roku TV
-    if curl --connect-timeout 3 --max-time 4 -d '' "http://${Ip}:8060/keypress/Lit_${CHAR_CODIFICADO}" > /dev/null 2>&1; then
+    if curl -d '' "http://${Ip}:8060/keypress/Lit_${CHAR_CODIFICADO}" > /dev/null 2>&1; then
 
     sleep 0.2
-    if curl --connect-timeout 3 --max-time 4 -d '' "http://${Ip}:8060/keypress/Enter" > /dev/null 2>&1; then
+    if curl -d '' "http://${Ip}:8060/keypress/Enter" > /dev/null 2>&1; then
     echo -e "${VERDE}Text sent successfully!${RESET}"
     else
         sleep 0.5
@@ -238,7 +238,7 @@ free_navigation() {
   read -r -n 1 -p "$(echo -e "${AMARELO}>  ${VERDE}")" direction
 
   case $direction in
-    [Ww]) if curl --connect-timeout 3 --max-time 4 -d '' "http://${Ip}:8060/keypress/Up" > /dev/null 2>&1; then
+    [Ww]) if curl -d '' "http://${Ip}:8060/keypress/Up" > /dev/null 2>&1; then
     true
     else
     sleep 0.3
@@ -253,7 +253,7 @@ free_navigation() {
     exit 1
       fi
     continue;;
-    [Ss]) if curl --connect-timeout 3 --max-time 4 -d '' "http://${Ip}:8060/keypress/Down" > /dev/null 2>&1; then
+    [Ss]) if curl -d '' "http://${Ip}:8060/keypress/Down" > /dev/null 2>&1; then
      true
      else
     sleep 0.3
@@ -268,7 +268,7 @@ free_navigation() {
     exit 1
     fi
     continue;;
-    [Aa]) if curl --connect-timeout 3 --max-time 4 -d '' "http://${Ip}:8060/keypress/Left" > /dev/null 2>&1; then
+    [Aa]) if curl -d '' "http://${Ip}:8060/keypress/Left" > /dev/null 2>&1; then
      true
      else
     sleep 0.3
@@ -283,7 +283,7 @@ free_navigation() {
     exit 1
     fi
     continue;;
-    [Dd]) if curl --connect-timeout 3 --max-time 4 -d '' "http://${Ip}:8060/keypress/Right" > /dev/null 2>&1; then
+    [Dd]) if curl -d '' "http://${Ip}:8060/keypress/Right" > /dev/null 2>&1; then
      true
      else
     sleep 0.3
