@@ -205,81 +205,6 @@ teclado_func() {
     echo "                                                               "
     sleep 1
 
-    echo -e "${AMARELO}In which app do you want to search for this?${RESET}"
-
-    sleep 0.1
-    echo -e "${AMARELO}1) Netflix${RESET}"
-
-    sleep 0.1
-    echo -e "${AMARELO}2) Spotify${RESET}"
-
-    sleep 0.1
-    echo -e "${AMARELO}3) Youtube${RESET}"
-
-    sleep 0.1
-    echo -e "${AMARELO}4) Browse of system${RESET}"
-
-    sleep 0.1
-    echo "                                                               "
-
-    sleep 0.3
-
-    read -rp "$(echo -e "${AMARELO}>  ${VERDE}")" app_choice
-
-
-    # ========================================================
-    # Launch selected application
-    # ========================================================
-
-    if [[ "$app_choice" == "1" ]]; then
-
-      curl -d '' \
-        "http://${Ip}:8060/launch/12?contentId=search" \
-        > /dev/null 2>&1
-
-      sleep 7
-
-    elif [[ "$app_choice" == "2" ]]; then
-
-      curl -d '' \
-        "http://${Ip}:8060/launch/19977?contentId=search" \
-        > /dev/null 2>&1
-
-      sleep 7
-
-    elif [[ "$app_choice" == "3" ]]; then
-
-      curl -d '' \
-        "http://${Ip}:8060/launch/837?contentId=search" \
-        > /dev/null 2>&1
-
-      sleep 7
-
-    elif [[ "$app_choice" == "4" ]]; then
-
-      # Kept intentionally, as requested.
-      # You can replace this search method later.
-
-      curl -d '' \
-        "http://${Ip}:8060/search/browse?keyword=" \
-        > /dev/null 2>&1
-
-      sleep 5
-
-    else
-
-      sleep 0.5
-      echo "                                                        "
-      echo -e "${VERMELHO}Error: Invalid option!${RESET}"
-      sleep 0.5
-
-      continue
-    fi
-
-
-    # ========================================================
-    # Send text character by character
-    # ========================================================
 
     for (( i=0; i<${#texto_user}; i++ )); do
 
@@ -299,6 +224,7 @@ teclado_func() {
       if curl -d '' \
         "http://${Ip}:8060/keypress/Lit_${CHAR_CODIFICADO}" \
         > /dev/null 2>&1
+        echo -e "${VERDE}Successful Research! ${RESET}"
       then
 
         sleep 0.2
