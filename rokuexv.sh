@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ==============================================================================
 # Name of Script: RokuEXV
-# Description:  An Roku TV Exploit
+# Description:  An Roku TV Remote Controller
 # Author: Madruga
 # ==============================================================================
 
