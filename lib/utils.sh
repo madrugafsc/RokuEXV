@@ -61,7 +61,7 @@ main_menu() {
     sleep 0.1
     echo -e "${VERMELHO}⠀⠀⢸⡇⢸⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⡇⠀⠀|   //_ \\| / / | ||| | _|  >  <  \\ V /   ${RESET}"
     sleep 0.1
-    echo -e "${VERMELHO}⠀⠀⢸⡇⢸⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⡇⠀⠀|_|_\\\\___/|_\\_\\ \\_,_| |___|/_/\\_\\  \\_/    ${RESET}"
+    echo -e "${VERMELHO}⠀⠀⢸⡇⢸⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⡇⠀⠀|_|_\\\\___/|_\\_\\ \\_,_| |___|/_/\\_\\  \\_/  ${RESET}V1.0.0${RESET}  ${RESET}"
     sleep 0.1
     echo -e "${VERMELHO}⠀⠀⢸⡇⢸⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⡇ ${RESET}  ${AMARELO}[${VERDE}Coded by Madruga${RESET}${RESET}${AMARELO}]${RESET}"    
     sleep 0.1
