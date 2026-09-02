@@ -62,5 +62,16 @@ Ensure your computer and the Roku TV are connected to the same local network. Pa
 
 *Note: Replace `<ip address>` with your Roku TV's actual local IP address.*
 
+## Project Status
+
+RokuEXV v1.0 is currently considered a complete and functional release. The project was created to provide a simple, fast, and straightforward way to control Roku TVs through the local network using the Roku ECP API.
+
+This was one of my first larger development projects, and it has reached the scope and functionality originally intended. Due to the current limitations of the ECP API, there are not many meaningful features left to add without changing the project's original purpose.
+
+Development is therefore potentially concluded for now. The repository will remain public and fully available to anyone who finds it useful. Future updates are still possible if new ideas, improvements, or API capabilities make further development worthwhile.
+
+And the most important -
+Have fun :)
+
 ## License
 This project is licensed under the **GPL 2.0 (GNU General Public License v2.0)**. See the `LICENSE` file for more details.
