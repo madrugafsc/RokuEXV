@@ -1,7 +1,7 @@
 #!/bin/bash
 
 netflix_func() {
-  if curl --connect-timeout 3 --max-time 4 '' -d "http://${Ip}:8060/launch/12" > /dev/null 2>&1; then
+  if curl -d '' "http://${Ip}:8060/launch/12" > /dev/null 2>&1; then
    echo -e "${VERDE}Successful Netflix is open!${RESET}"
   else
    sleep 0.5
@@ -18,7 +18,7 @@ netflix_func() {
 }
 
 spotify_func() {
-  if curl --connect-timeout 3 --max-time 4 '' -d "http://${Ip}:8060/launch/19977" > /dev/null 2>&1; then
+  if curl -d '' "http://${Ip}:8060/launch/19977" > /dev/null 2>&1; then
    echo -e "${VERDE}Successful Spotify is open!${RESET}"
   else
    sleep 0.5
@@ -35,7 +35,7 @@ spotify_func() {
 }
 
 youtube_func() {
-  if curl --connect-timeout 3 --max-time 4 '' -d "http://${Ip}:8060/launch/837" > /dev/null 2>&1; then
+  if curl -d '' "http://${Ip}:8060/launch/837" > /dev/null 2>&1; then
    echo -e "${VERDE}Successful Youtube is open!${RESET}"
   else
    sleep 0.5
@@ -52,7 +52,7 @@ youtube_func() {
 }
 
 primevideo_func() {
-  if curl --connect-timeout 3 --max-time 4 '' -d "http://${Ip}:8060/launch/13" > /dev/null 2>&1; then
+  if curl -d '' "http://${Ip}:8060/launch/13" > /dev/null 2>&1; then
    echo -e "${VERDE}Successful Prime Video is open!${RESET}"
   else
    sleep 0.5
@@ -69,7 +69,7 @@ primevideo_func() {
 }
 
 disney_func() {
-  if curl --connect-timeout 3 --max-time 4 '' -d "http://${Ip}:8060/launch/291097" > /dev/null 2>&1; then
+  if curl -d '' "http://${Ip}:8060/launch/291097" > /dev/null 2>&1; then
    echo -e "${VERDE}Successful Disney+ is open!${RESET}"
   else
    sleep 0.5
@@ -86,7 +86,7 @@ disney_func() {
 }
 
 exitapps_func() {
-  if curl --connect-timeout 3 --max-time 4 '' -d "http://${Ip}:8060/keypress/Home" > /dev/null 2>&1; then
+  if curl -d '' "http://${Ip}:8060/keypress/Home" > /dev/null 2>&1; then
    echo -e "${VERDE}Successful return to home!${RESET}"
   else
    sleep 0.5
@@ -103,7 +103,7 @@ exitapps_func() {
 }
 
 pluto_func() {
-  if curl --connect-timeout 3 --max-time 4 '' -d "http://${Ip}:8060/launch/74519" > /dev/null 2>&1; then
+  if curl -d '' "http://${Ip}:8060/launch/74519" > /dev/null 2>&1; then
    echo -e "${VERDE}Successful Pluto TV is open!${RESET}"
   else
    sleep 0.5
