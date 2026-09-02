@@ -224,8 +224,8 @@ teclado_func() {
       if curl -d '' \
         "http://${Ip}:8060/keypress/Lit_${CHAR_CODIFICADO}" \
         > /dev/null 2>&1
-        echo -e "${VERDE}Successful Research! ${RESET}"
       then
+        echo -e "${AMARELO}Researching... ${RESET}"
 
         sleep 0.2
 
